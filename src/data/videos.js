@@ -18,13 +18,13 @@ const data = [
     {
         id: "3",
         title: "How to Make a Protagonist",
-        url: "aGqF2r9Uuhk",
+        url: "p6nFIogiMRg",
         thumbnail: "https://i.ytimg.com/vi/p6nFIogiMRg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAHoOiEUl3mZhp7Jcvr8eUvb32ECg",
         channelName: "Karsten Runquist",
         channelImage: "https://yt3.ggpht.com/ytc/AAUvwniy9-JxxpRn5wl2d8X94VdUgDIeyuJpa8z2Cxd4nqU=s88-c-k-c0x00ffffff-no-rj",
     },
     {
-        id: "3",
+        id: "4",
         title: "Visual Language",
         url: "GfqD5WqChUY",
         thumbnail: "https://i.ytimg.com/vi/GfqD5WqChUY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC2GlEiJmaHCLnx9hymyO5XVRZ7rQ",

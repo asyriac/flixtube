@@ -29,7 +29,8 @@ const Navbar = () => {
                 </button>
                 <ul className={`nav-link `}>
                     <li className="nav-link-item"><a href="">Home</a></li>
-                    <li className="nav-link-item"><a href="">About</a></li>
+                    <li className="nav-link-item"><a href="">Playlists</a></li>
+                    <li className="nav-link-item"><a href="">History</a></li>
                 </ul>
             </div>
             {
@@ -37,6 +38,7 @@ const Navbar = () => {
                 <ul className="nav-link-mobile">
                     <li className="nav-link-item"><a href="">Home</a></li>
                     <li className="nav-link-item"><a href="">About</a></li>
+                    <li className="nav-link-item"><a href="">History</a></li>
                 </ul>
             }
 
