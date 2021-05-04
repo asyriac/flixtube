@@ -1,0 +1,21 @@
+
+.mobile-view {
+    display: none;
+  }
+  
+  @media (max-width: 500px) {
+    .nav-link {
+      display: none;
+    }
+  
+    .mobile-view {
+      display: block;
+    }
+  
+    .nav-link-mobile {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      align-items: center;
+    }
+  }
