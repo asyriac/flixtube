@@ -28,17 +28,15 @@ const Navbar = () => {
                     }
                 </button>
                 <ul className={`nav-link `}>
-                    <li className="nav-link-item"><a href="">Home</a></li>
-                    <li className="nav-link-item"><a href="">Playlists</a></li>
-                    <li className="nav-link-item"><a href="">History</a></li>
+                    <li className="nav-link-item"><Link to="/">Home</Link></li>
+                    <li className="nav-link-item"><Link to="/playlists">Playlists</Link></li>
                 </ul>
             </div>
             {
                 openSideNav &&
                 <ul className="nav-link-mobile">
-                    <li className="nav-link-item"><a href="">Home</a></li>
-                    <li className="nav-link-item"><a href="">About</a></li>
-                    <li className="nav-link-item"><a href="">History</a></li>
+                    <li className="nav-link-item"><Link to="/">Home</Link></li>
+                    <li className="nav-link-item"><Link to="/playlists">About</Link></li>
                 </ul>
             }
 

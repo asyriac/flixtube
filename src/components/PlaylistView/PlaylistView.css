@@ -1,0 +1,31 @@
+.playlist-video{
+}
+
+.playlist-videos-list{
+    flex:0.35;
+    height:30em;
+    overflow-y: auto;
+}
+
+.playlist-videos-list-item{
+    display: flex;
+    font-size: 0.85rem;
+    margin-bottom: 1em;
+}
+
+.playlist-videos-list-item > *{
+    cursor: pointer;
+}
+
+.playlist-videos-list-item:hover{
+    background: var(--primary-lite);
+}
+
+.playlist-videos-list-item img{
+    height: 4em;
+    margin-right: 0.75em;
+}
+
+.playlist-item-active{
+    background: var(--primary-lite);
+}
