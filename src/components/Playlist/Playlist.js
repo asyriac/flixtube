@@ -7,7 +7,6 @@ const Playlist = () => {
     const {liked, bookmarked, userplaylists} = usePlaylistContext();
     const navigate = useNavigate();
 
-    console.log(liked);
     return(
         <>
         <div className="card-list row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 pt-1">          

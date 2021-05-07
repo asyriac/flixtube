@@ -16,8 +16,6 @@ const PlaylistView = () => {
     const isLiked = liked.videos.find((item)=> item.url === videoId)    
     const isBookmarked = bookmarked.videos.find((item)=> item.url === videoId)
 
-
-    console.log(currentPlaylist);
     const navigate = useNavigate();
 
     const handlePlaylistVideo = (item) => {

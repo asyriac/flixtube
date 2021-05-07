@@ -45,7 +45,6 @@ const PlaylistModal = (props) => {
                 </div>
                 <div className="modal-body">
                     {props.children.map((item, id) => {
-                        console.log(item);
                         return (
                             <div
                                 key={id}

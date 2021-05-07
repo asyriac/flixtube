@@ -1,24 +1,9 @@
 import { v4 as uuid } from 'uuid';
 
-const initialState = {
-    "liked" : {
-        id: uuid(),
-        videos: [],
-    },
-    "bookmarked" : { 
-        id: uuid(),
-        videos: []
-    },
-    "userplaylists" : [
-
-    ]
-}
-
 
 const playlistReducer = (state, action) => {
     switch (action.type) {
         case "ADD_TO_LIKED_VIDEOS":
-            console.log(action.payload)
             return {
                 ...state,
                 liked: {
@@ -56,7 +41,6 @@ const playlistReducer = (state, action) => {
                 "userplaylists" : state.userplaylists.concat( { id:uuid(), title: action.payload, videos:[]})
             }
         case "ADD_TO_PLAYLIST":
-            console.log(action.payload.video, action.payload.playlistId)
             return {
                 ...state,
                 userplaylists: state.userplaylists.map((playlist)=> {
