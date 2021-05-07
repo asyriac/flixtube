@@ -17,11 +17,11 @@ const VideoList = () => {
                 data.map((item) => {
                     return (
                         <div key={item.id} className="card" onClick={() => handleClick(item.id)}>
-                            <img src={item.thumbnail} />
+                            <img src={item.thumbnail} alt={item.title}/>
                             <div className="card-content">
                                 <h3>{item.title}</h3>
                                 <div className="flex mt-md">
-                                    <img src={item.channelImage} className="img-round" />
+                                    <img src={item.channelImage} className="img-round" alt={item.channelName}/>
                                     <div>
                                         <span className="ml-sm">{item.channelName}</span>
                                     </div>
