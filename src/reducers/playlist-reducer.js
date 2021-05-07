@@ -1,5 +1,19 @@
 import { v4 as uuid } from 'uuid';
 
+const initialState = {
+    "liked" : {
+        id: uuid(),
+        videos: [],
+    },
+    "bookmarked" : { 
+        id: uuid(),
+        videos: []
+    },
+    "userplaylists" : [
+
+    ]
+}
+
 
 const playlistReducer = (state, action) => {
     switch (action.type) {

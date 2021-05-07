@@ -6,46 +6,6 @@ import data from '../../data/videos'
 import PlaylistModal from "../PlaylistModal/PlaylistModal";
 import './Video.css'
 
-
-const playlists = [
-    {
-        title: "Demo",
-        videos: []
-    },
-    {
-        title: "Fav",
-        videos: []
-    },
-    {
-        title: "Wow",
-        videos: []
-    },
-    {
-        title: "Demo",
-        videos: []
-    },
-    {
-        title: "Fav",
-        videos: []
-    },
-    {
-        title: "Wow",
-        videos: []
-    },
-    {
-        title: "Demo",
-        videos: []
-    },
-    {
-        title: "Fav",
-        videos: []
-    },
-    {
-        title: "Wow",
-        videos: []
-    }
-]
-
 const Video = () => {
     const [show, setShow] = useState(false);
     const { videoId } = useParams();
