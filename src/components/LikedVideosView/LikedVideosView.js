@@ -1,6 +1,7 @@
 import ReactPlayer from "react-player";
-import { useNavigate, useParams } from "react-router";
+import { Navigate, useNavigate, useParams } from "react-router";
 import { usePlaylistContext } from "../../contexts/playlist-context";
+import { toast } from 'react-toastify';
 
 
 const LikedVideosView = () => {
@@ -14,6 +15,12 @@ const LikedVideosView = () => {
     const isBookmarked = bookmarked.videos.find((item)=> item.url === videoId)
 
     const navigate = useNavigate();
+
+    if(videoId === "undefined"){
+        toast.dark('Playlist does not exist.')
+       return <Navigate to="/playlists"/>
+    }
+        
 
     const handlePlaylistVideo = (item) => {
         navigate(`/playlists/liked/${item.url}`)
@@ -74,7 +81,7 @@ const LikedVideosView = () => {
                 {
                     liked.videos.map((item)=>{
                         return (
-                            <div className={`playlist-videos-list-item ${item.id === currentVideo.id && 'playlist-item-active'}`} onClick={()=>handlePlaylistVideo(item)}>
+                            <div key={item.id} className={`playlist-videos-list-item ${item.id === currentVideo.id && 'playlist-item-active'}`} onClick={()=>handlePlaylistVideo(item)}>
                                 <img src={item.thumbnail} alt={item.title}/>
                                 <h4>{item.title}</h4>
                             </div>

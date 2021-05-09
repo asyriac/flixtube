@@ -16,7 +16,7 @@ const Playlist = () => {
                     <h3>Liked videos</h3>
                 </div>
             </div>
-            <div className="card" onClick={()=> navigate(`/playlists/bookmarked/${bookmarked.videos[0].url}`)}>
+            <div className="card" onClick={()=> navigate(`/playlists/bookmarked/${bookmarked.videos[0]?.url}`)}>
                 <img src={bookmarked.videos.length>0 ? bookmarked.videos[0].thumbnail: placeholder} alt="bookmarked-playlist"/>
                 <div className="card-content">
                     <h3>Bookmarked videos</h3>

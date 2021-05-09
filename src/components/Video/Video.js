@@ -48,12 +48,12 @@ const Video = () => {
                     <h1>{videoDetails.title}</h1>
                     <div className="video-details-icons">
                         {isLiked ?
-                            <i class="fas fa-thumbs-up" onClick={handleRemoveFromLikedVideos}></i>
+                            <i className="fas fa-thumbs-up" onClick={handleRemoveFromLikedVideos}></i>
                             :
                             <i className="far fa-thumbs-up" onClick={handleAddToLikedVideos}></i>
                         }
                         {isBookmarked ?
-                            <i class="fas fa-bookmark" onClick={handleRemoveFromBookmarkedVideos}></i>
+                            <i className="fas fa-bookmark" onClick={handleRemoveFromBookmarkedVideos}></i>
                             :
                             <i className="far fa-bookmark" onClick={handleAddToBookmarkedVideos}></i>
                         }

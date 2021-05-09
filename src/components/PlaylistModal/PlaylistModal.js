@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { usePlaylistContext } from "../../contexts/playlist-context";
 
 const PlaylistModal = (props) => {
@@ -30,6 +31,7 @@ const PlaylistModal = (props) => {
     }
 
     const handleAddToPlaylist = (videoDetails, playlistId) => {
+        toast.dark('Added to playlist.')
         addToPlaylist(videoDetails, playlistId);
     }
 

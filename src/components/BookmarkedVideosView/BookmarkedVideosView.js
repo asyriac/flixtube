@@ -1,5 +1,6 @@
 import ReactPlayer from "react-player";
-import { useNavigate, useParams } from "react-router";
+import { Navigate, useNavigate, useParams } from "react-router";
+import { toast } from "react-toastify";
 import { usePlaylistContext } from "../../contexts/playlist-context";
 
 
@@ -15,6 +16,11 @@ const BookmarkedVideosView = () => {
 
 
     const navigate = useNavigate();
+
+    if(videoId === "undefined"){
+        toast.dark('Playlist does not exist.')
+        return <Navigate to="/playlists"/>
+     }
 
     const handlePlaylistVideo = (item) => {
         navigate(`/playlists/bookmarked/${item.url}`)

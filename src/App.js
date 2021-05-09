@@ -7,6 +7,9 @@ import PlaylistView from "./components/PlaylistView/PlaylistView";
 import LikedVideosView from "./components/LikedVideosView/LikedVideosView";
 import BookmarkedVideosView from "./components/BookmarkedVideosView/BookmarkedVideosView";
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   return (
     <>
@@ -21,6 +24,7 @@ function App() {
          <Route path="/playlists/:playlistId/:videoId" element={<PlaylistView/>} />
        </Routes>
      </div>
+     <ToastContainer />
     </>
   );
 }
