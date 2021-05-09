@@ -1,12 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { useNavigate, useParams } from "react-router";
 import { usePlaylistContext } from "../../contexts/playlist-context";
+import PlaylistModal from "../PlaylistModal/PlaylistModal";
 import './PlaylistView.css'
 
 
 const PlaylistView = () => {
-
+    const [show, setShow] = useState(false);
     const {playlistId,videoId} = useParams();
     const {liked, bookmarked, userplaylists,addToLikedVideos, removeFromLikedVideos , addToBookmarkedVideos, removeFromBookmarkedVideos} = usePlaylistContext();
 
@@ -64,7 +65,7 @@ const PlaylistView = () => {
                             :
                             <i className="far fa-bookmark" onClick={handleAddToBookmarkedVideos}></i>
                         }
-                        <i className="fas fa-clipboard-list"></i>
+                        <i className="fas fa-clipboard-list" onClick={() => setShow(true)}></i>
                     </div>
                 </div>
             </div>
@@ -80,6 +81,9 @@ const PlaylistView = () => {
                     })
                 }
             </div>
+            <PlaylistModal onClick={() => setShow(false)} show={show} videoDetails={currentVideo} title="Save to...">
+                {userplaylists}
+            </PlaylistModal>
         </div >
     )
 }

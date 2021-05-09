@@ -32,8 +32,12 @@ const PlaylistContextProvider = ({children}) => {
         dispatch({type: "ADD_TO_PLAYLIST", payload: {video,playlistId}})
     }
 
+    const removeFromPlaylist = (video,playlistId) => {
+        dispatch({type: "REMOVE_FROM_PLAYLIST", payload: {video,playlistId}})
+    }
+
     return(
-        <PlaylistContext.Provider value={{...state, addToLikedVideos, removeFromLikedVideos, addToBookmarkedVideos, removeFromBookmarkedVideos, addNewPlaylist,addToPlaylist}}>
+        <PlaylistContext.Provider value={{...state, addToLikedVideos, removeFromLikedVideos, addToBookmarkedVideos, removeFromBookmarkedVideos, addNewPlaylist,addToPlaylist,removeFromPlaylist}}>
             {children}
         </PlaylistContext.Provider>
     )

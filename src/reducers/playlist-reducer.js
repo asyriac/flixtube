@@ -68,6 +68,20 @@ const playlistReducer = (state, action) => {
                     return playlist
                 })
             }
+        case "REMOVE_FROM_PLAYLIST":
+            return{
+                ...state,
+                userplaylists: state.userplaylists.map((playlist)=> {
+                    if(playlist.id === action.payload.playlistId)
+                    {
+                        return {
+                            ...playlist,
+                            videos: playlist.videos.filter(item => item.id !== action.payload.video.id)
+                        }
+                    }
+                    return playlist
+                })
+            }
         default:
             return state
     }

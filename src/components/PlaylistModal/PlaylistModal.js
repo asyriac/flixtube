@@ -5,7 +5,7 @@ import { usePlaylistContext } from "../../contexts/playlist-context";
 const PlaylistModal = (props) => {
     const [newPlaylistTitle, setNewPlaylistTitle] = useState("");
     const [showAddNewPlaylist, setShowAddNewPlaylist] = useState(false);
-    const {addNewPlaylist, addToPlaylist} = usePlaylistContext();
+    const {addNewPlaylist, addToPlaylist, removeFromPlaylist} = usePlaylistContext();
 
     const { onClick, videoDetails , children: playlists} = props;
 
@@ -35,6 +35,18 @@ const PlaylistModal = (props) => {
         addToPlaylist(videoDetails, playlistId);
     }
 
+    const handleRemoveFromPlaylist = (videoDetails, playlistId) => {
+        toast.dark('Removed from playlist.')
+        removeFromPlaylist(videoDetails, playlistId);
+    }
+
+    const handleInputChange = (videoDetails,item) => {
+        if(isPresentInPlaylist(videoDetails.id,item.videos))
+            handleRemoveFromPlaylist(videoDetails,item.id)
+        else
+            handleAddToPlaylist(videoDetails,item.id);
+    }
+
 
     return (
         <div className={`modal ${props.show ? 'show' : ''}`} onClick={props.onClick}>
@@ -57,7 +69,7 @@ const PlaylistModal = (props) => {
                                         name="checkbox"
                                         id={`checkBox${id}`}
                                         checked= {isPresentInPlaylist(videoDetails.id,item.videos)}
-                                        onChange={()=>handleAddToPlaylist(videoDetails,item.id)}
+                                        onChange={()=>handleInputChange(videoDetails,item)}
                                     />
                                     {item.title}
                                 </label>
