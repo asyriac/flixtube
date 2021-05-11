@@ -1,0 +1,7 @@
+.playlist-card  *{
+    cursor:default;
+}
+
+.flex-1{
+    flex:1;
+}

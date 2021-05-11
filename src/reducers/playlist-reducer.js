@@ -3,10 +3,12 @@ import { v4 as uuid } from 'uuid';
 const initialState = {
     "liked" : {
         id: uuid(),
+        title: "Liked videos",
         videos: [],
     },
     "bookmarked" : { 
         id: uuid(),
+        title: "Bookmarked videos",
         videos: []
     },
     "userplaylists" : [

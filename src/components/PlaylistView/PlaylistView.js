@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ReactPlayer from "react-player";
-import { useNavigate, useParams } from "react-router";
+import { Navigate, useNavigate, useParams } from "react-router";
 import { usePlaylistContext } from "../../contexts/playlist-context";
 import PlaylistModal from "../PlaylistModal/PlaylistModal";
-import './PlaylistView.css'
+import './PlaylistView.css';
+import videos from '../../data/videos'
+import { findPlaylistDetails } from "../../utils/playlist-utils";
 
 
 const PlaylistView = () => {
@@ -11,16 +13,28 @@ const PlaylistView = () => {
     const {playlistId,videoId} = useParams();
     const {liked, bookmarked, userplaylists,addToLikedVideos, removeFromLikedVideos , addToBookmarkedVideos, removeFromBookmarkedVideos} = usePlaylistContext();
 
+    let playlistDetails;
+    switch(playlistId){
+        case "liked":
+            playlistDetails = JSON.parse(JSON.stringify(liked));
+            break;
+        case "bookmarked":
+            playlistDetails = JSON.parse(JSON.stringify(bookmarked));
+            break;
+        default:
+            playlistDetails = findPlaylistDetails(playlistId,userplaylists);
+            break;
+    }
     
-    const currentPlaylist = userplaylists.find((item)=> item.id === playlistId);
-    const currentVideo = currentPlaylist.videos.find((item)=> item.url === videoId)
-    const isLiked = liked.videos.find((item)=> item.url === videoId)    
-    const isBookmarked = bookmarked.videos.find((item)=> item.url === videoId)
+    const currentVideo = videos.find((item)=> item.id === videoId)   
+    const isLiked = liked.videos.find((item)=> item.id === videoId)    
+    const isBookmarked = bookmarked.videos.find((item)=> item.id === videoId)
 
     const navigate = useNavigate();
 
+   
     const handlePlaylistVideo = (item) => {
-        navigate(`/playlists/${playlistId}/${item.url}`)
+        navigate(`/playlists/${playlistId}/${item.id}`)
     }
 
     const handleRemoveFromLikedVideos = () => {
@@ -48,7 +62,7 @@ const PlaylistView = () => {
                         width="100%"
                         height="100%"
                         controls
-                        url={`https://www.youtube.com/watch?v=${videoId}`}
+                        url={`https://www.youtube.com/watch?v=${currentVideo.url}`}
                     />
                 </div>
 
@@ -71,7 +85,7 @@ const PlaylistView = () => {
             </div>
             <div className="playlist-videos-list">
                 {
-                    currentPlaylist.videos.map((item)=>{
+                    playlistDetails.videos.map((item)=>{
                         return (
                             <div className={`playlist-videos-list-item ${item.id === currentVideo.id && 'playlist-item-active'}`} onClick={()=>handlePlaylistVideo(item)}>
                                 <img src={item.thumbnail} alt={item.title}/>
