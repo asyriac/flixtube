@@ -1,3 +1,3 @@
 export const findPlaylistDetails = (playlistId, playlists) => {
-    return playlists.find((item) => item.id === playlistId)
-}
+  return playlists.find((item) => item._id === playlistId);
+};

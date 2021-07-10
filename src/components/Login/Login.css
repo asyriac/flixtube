@@ -1,0 +1,15 @@
+.login-container {
+  height: calc(100vh - 3rem);
+}
+
+.login-form {
+  background: #fff;
+  padding: 50px;
+}
+
+@media screen and (max-width: 779px) {
+  .login-container {
+    width: 100%;
+    background: #fff;
+  }
+}
