@@ -64,11 +64,7 @@ const playlistReducer = (state, action) => {
     case "ADD_NEW_PLAYLIST":
       return {
         ...state,
-        userplaylists: state.userplaylists.concat({
-          id: uuid(),
-          title: action.payload,
-          videos: [],
-        }),
+        userplaylists: state.userplaylists.concat(action.payload),
       };
     case "ADD_TO_PLAYLIST":
       return {

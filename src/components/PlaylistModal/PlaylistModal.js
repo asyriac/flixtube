@@ -41,6 +41,7 @@ const PlaylistModal = (props) => {
   };
 
   const handleInputChange = (videoDetails, item) => {
+    console.log(item);
     if (isPresentInPlaylist(videoDetails._id, item.videos)) handleRemoveFromPlaylist(videoDetails, item._id);
     else handleAddToPlaylist(videoDetails, item._id);
   };

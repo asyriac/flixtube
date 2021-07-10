@@ -34,8 +34,9 @@ const PlaylistContextProvider = ({ children }) => {
   };
 
   const addNewPlaylist = async (item) => {
-    dispatch({ type: "ADD_NEW_PLAYLIST", payload: item });
-    await playlistAPI.createNewPlaylist({ title: item });
+    const res = await playlistAPI.createNewPlaylist({ title: item });
+    console.log(res.data.playlist);
+    dispatch({ type: "ADD_NEW_PLAYLIST", payload: res.data.playlist });
   };
 
   const addToPlaylist = async (video, playlistId) => {
