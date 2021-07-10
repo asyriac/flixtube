@@ -11,7 +11,7 @@ const VideoContextProvider = ({ children }) => {
     dispatch({ type: "LOADING" });
     const {
       data: { videos },
-    } = await axios.get(`http://localhost:4000/api/v1/videos`);
+    } = await axios.get(`https://flixtube-backend.herokuapp.com/api/v1/videos`);
     dispatch({ type: "GET_VIDEOS", payload: videos });
   };
 
@@ -19,11 +19,7 @@ const VideoContextProvider = ({ children }) => {
     getVideo();
   }, []);
 
-  return (
-    <VideoContext.Provider value={{ ...state }}>
-      {children}
-    </VideoContext.Provider>
-  );
+  return <VideoContext.Provider value={{ ...state }}>{children}</VideoContext.Provider>;
 };
 
 const useVideoContext = () => useContext(VideoContext);
