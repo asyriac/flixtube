@@ -1,0 +1,9 @@
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.form-row .form-group {
+  flex: 1 1 auto;
+}
