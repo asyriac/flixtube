@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-
 const initialState = {
   liked: {
     title: "Liked videos",

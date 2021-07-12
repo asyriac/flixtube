@@ -15,13 +15,9 @@ import { useAuthContext } from "./contexts/auth-context";
 import Loading from "./components/Loading/Loading";
 import Logout from "./components/Logout/Logout";
 import useFetchCurrentUser from "./hooks/useFetchCurrentUser";
-import { usePlaylistContext } from "./contexts/playlist-context";
-import { useEffect } from "react";
-import useFetchUserPlaylists from "./hooks/useFetchUserPlaylists";
 
 function App() {
-  const { initialLoading, isLoggedIn } = useAuthContext();
-  const { getUserPlaylist } = usePlaylistContext();
+  const { initialLoading } = useAuthContext();
 
   useFetchCurrentUser();
   if (initialLoading) return <Loading />;

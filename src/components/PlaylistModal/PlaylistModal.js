@@ -7,7 +7,7 @@ const PlaylistModal = (props) => {
   const [showAddNewPlaylist, setShowAddNewPlaylist] = useState(false);
   const { addNewPlaylist, addToPlaylist, removeFromPlaylist } = usePlaylistContext();
 
-  const { onClick, videoDetails, children: playlists } = props;
+  const { onClick, videoDetails } = props;
 
   useEffect(() => {
     const close = (e) => {

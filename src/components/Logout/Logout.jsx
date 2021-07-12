@@ -8,7 +8,7 @@ const Logout = () => {
 
   useEffect(() => {
     logoutUser();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (isLoggedIn) return <Loading />;
 

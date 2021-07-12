@@ -1,1 +1,1 @@
-export const API_ENDPOINT = "https://flixtube-backend.herokuapp.com/api/v1";
+export const API_ENDPOINT = `${process.env.REACT_APP_BACKEND_URL}/api/v1`;

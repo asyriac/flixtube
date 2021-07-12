@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/auth-context";
 import "./Navbar.css";

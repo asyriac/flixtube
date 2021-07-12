@@ -8,7 +8,7 @@ const useFetchUserPlaylists = () => {
 
   useEffect(() => {
     if (isLoggedIn) getUserPlaylist();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
 export default useFetchUserPlaylists;

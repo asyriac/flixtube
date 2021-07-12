@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ReactPlayer from "react-player";
-import { Navigate, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { usePlaylistContext } from "../../contexts/playlist-context";
 import PlaylistModal from "../PlaylistModal/PlaylistModal";
 import "./PlaylistView.css";

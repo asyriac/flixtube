@@ -1,6 +1,5 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 import { initialState, playlistReducer } from "../reducers/playlist-reducer";
-import axios from "axios";
 import { playlistAPI } from "../services";
 
 const PlaylistContext = createContext();

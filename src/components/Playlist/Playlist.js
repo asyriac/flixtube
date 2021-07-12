@@ -15,7 +15,7 @@ const Playlist = () => {
     <>
       <div className="card-list row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 pt-1">
         <div className="card" onClick={() => navigate(`/playlists/liked`)} alt="liked-playlist">
-          <img src={liked.videos.length > 0 ? liked.videos[0].thumbnail : placeholder} />
+          <img src={liked.videos.length > 0 ? liked.videos[0].thumbnail : placeholder} alt="thumbnail" />
           <div className="card-content">
             <h3>Liked videos</h3>
           </div>

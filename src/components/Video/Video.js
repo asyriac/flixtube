@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ReactPlayer from "react-player";
-import { useParams, Navigate } from "react-router";
+import { useParams } from "react-router";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/auth-context";
 import { usePlaylistContext } from "../../contexts/playlist-context";
@@ -11,7 +11,7 @@ import PlaylistModal from "../PlaylistModal/PlaylistModal";
 import "./Video.css";
 
 const Video = () => {
-  const { loading, videos: data } = useVideoContext();
+  const { videos: data } = useVideoContext();
   const { playlistLoading } = usePlaylistContext();
   const { isLoggedIn } = useAuthContext();
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ const Video = () => {
   return (
     <>
       {data.length === 0 ? (
-        <h1>Loading...</h1>
+        <Loading />
       ) : (
         <div className="video-notes-container pt-1">
           <div className="">

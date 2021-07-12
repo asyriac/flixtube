@@ -1,4 +1,4 @@
-import { useLocation, useNavigate, useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { usePlaylistContext } from "../../contexts/playlist-context";
 import { findPlaylistDetails } from "../../utils/playlist-utils";
 import placeholder from "../../images/placeholder.png";
@@ -35,7 +35,7 @@ const PlaylistDetails = () => {
   return (
     <>
       {playlistVideos === undefined ? (
-        <h1>Loading...</h1>
+        <Loading />
       ) : (
         <div className="pt-1 flex flex-align-items-start">
           <div className="card playlist-card ">

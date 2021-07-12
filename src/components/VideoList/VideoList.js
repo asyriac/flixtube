@@ -1,17 +1,15 @@
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../contexts/auth-context";
 import { usePlaylistContext } from "../../contexts/playlist-context";
 import { useVideoContext } from "../../contexts/video-context";
-import useFetchCurrentUser from "../../hooks/useFetchCurrentUser";
 import useFetchUserPlaylists from "../../hooks/useFetchUserPlaylists";
 import Loading from "../Loading/Loading";
 import "./VideoList.css";
 
 const VideoList = () => {
   const { loading, videos } = useVideoContext();
-  const { initialLoading, isLoggedIn } = useAuthContext();
-  const { getUserPlaylist, playlistLoading } = usePlaylistContext();
+  const { isLoggedIn } = useAuthContext();
+  const { playlistLoading } = usePlaylistContext();
 
   const navigate = useNavigate();
 
@@ -23,9 +21,10 @@ const VideoList = () => {
 
   if (isLoggedIn && playlistLoading) return <Loading />;
 
+  if (loading) return <Loading />;
+
   return (
     <>
-      {loading && <h1>Loading...</h1>}
       <div className="card-list row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 pt-1">
         {videos.map((item) => {
           return (
