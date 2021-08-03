@@ -15,8 +15,8 @@ const Login = () => {
   const path = state?.from || "/";
 
   const initialValues = {
-    username: "",
-    password: "",
+    username: "johndoe",
+    password: "qwert123",
   };
 
   const validationSchema = Yup.object({
